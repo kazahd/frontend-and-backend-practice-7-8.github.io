@@ -4,41 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости - Семестровая работа</title>
+    <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <div id="header">Хэдер</div>
-    
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li>
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-            <link rel="stylesheet" href="../style/styles.css">
-        </ul>
-    </div>
-    
-    <div id="content">
-        <div>
-            <h2>Заголовок новости 1</h2>
-            <div>Дата публикации: 15 декабря 2024 | Автор: Иванов Иван</div>
-            <div>Текст новости 1. Здесь содержится информация о первой новости.</div>
+    <div class="page-container">
+        <div class="header">Новости</div>
+        
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
         </div>
         
-        <div>
-            <h2>Заголовок новости 2</h2>
-            <div>Дата публикации: 10 декабря 2024 | Автор: Петров Петр</div>
-            <div>Текст новости 2. Здесь содержится информация о второй новости.</div>
+        <div class="content">
+            <div class="news-item">
+                <h2 class="news-title">Запуск нового проекта</h2>
+                <div class="news-meta">Дата публикации: 15 декабря 2024 | Автор: Иванов Иван</div>
+                <div class="news-text">
+                    Мы рады сообщить о запуске нашего нового проекта, который позволит пользователям 
+                    более эффективно управлять своими задачами. Проект включает в себя современный 
+                    интерфейс и расширенные возможности для командной работы.
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <h2 class="news-title">Обновление функционала</h2>
+                <div class="news-meta">Дата публикации: 10 декабря 2024 | Автор: Петров Петр</div>
+                <div class="news-text">
+                    В последнем обновлении мы добавили несколько новых функций, которые 
+                    сделают работу с системой еще удобнее. Среди основных изменений: 
+                    улучшенный поиск по задачам, возможность прикрепления файлов и новые 
+                    шаблоны для проектов.
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <h2 class="news-title">Планы на будущее</h2>
+                <div class="news-meta">Дата публикации: 5 декабря 2024 | Автор: Сидорова Мария</div>
+                <div class="news-text">
+                    Наша команда активно работает над развитием платформы. В планах на ближайшие 
+                    месяцы реализация интеграции с популярными сервисами, мобильное приложение 
+                    для iOS и Android, а также расширенные аналитические инструменты.
+                </div>
+            </div>
         </div>
         
-        <div>
-            <h2>Заголовок новости 3</h2>
-            <div>Дата публикации: 5 декабря 2024 | Автор: Сидоров Алексей</div>
-            <div>Текст новости 3. Здесь содержится информация о третьей новости.</div>
-        </div>
+        <div class="footer">Футер</div>
     </div>
-    
-    <div id="footer">Футер</div>
 </body>
 </html>

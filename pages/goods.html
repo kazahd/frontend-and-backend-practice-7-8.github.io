@@ -4,41 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары - Семестровая работа</title>
+    <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <div id="header">Хэдер</div>
-    
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li>
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-            <link rel="stylesheet" href="../style/styles.css">
-        </ul>
-    </div>
-    
-    <div id="content">
-        <div>
-            <img src="../images/goods1.jpg" alt="Товар 1" width="200" height="150">
-            <div>Название товара 1</div>
-            <div>Цена: 1000 руб.</div>
+    <div class="page-container">
+        <div class="header">Товары</div>
+        
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
         </div>
         
-        <div>
-            <img src="../images/goods2.jpg" alt="Товар 2" width="200" height="150">
-            <div>Название товара 2</div>
-            <div>Цена: 1500 руб.</div>
+        <div class="content">
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="../images/goods1.jpg" alt="Товар 1" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Профессиональная видеокарта</h3>
+                        <p class="product-price">25 000 руб.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="../images/goods2.jpg" alt="Товар 2" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Игровой монитор 4K</h3>
+                        <p class="product-price">18 500 руб.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="../images/goods3.jpg" alt="Товар 3" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Механическая клавиатура</h3>
+                        <p class="product-price">7 200 руб.</p>
+                    </div>
+                </div>
+            </div>
         </div>
         
-        <div>
-            <img src="../images/goods3.jpg" alt="Товар 3" width="200" height="150">
-            <div>Название товара 3</div>
-            <div>Цена: 2000 руб.</div>
-        </div>
+        <div class="footer">Футер</div>
     </div>
-    
-    <div id="footer">Футер</div>
 </body>
 </html>

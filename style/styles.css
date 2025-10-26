@@ -1,4 +1,4 @@
-/* ===== БАЗОВЫЕ СТИЛИ ===== */
+/* ==== БАЗОВЫЕ СТИЛИ ==== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -7,16 +7,23 @@ body {
     min-height: 100vh;
 }
 
-/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
+/* ==== КОНТЕЙНЕР СТРАНИЦЫ ==== */
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
     background: white;
     min-height: 100vh;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
 }
 
-/* ===== ШАПКА ===== */
+/* ==== ШАПКА ==== */
 .header {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
@@ -25,12 +32,20 @@ body {
     font-size: 28px;
     font-weight: 300;
     letter-spacing: 2px;
+    grid-area: header;
 }
 
-/* ===== НАВИГАЦИЯ ===== */
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+/* ==== НАВИГАЦИЯ ==== */
 .nav {
     background: #2c3e50;
     padding: 20px 0;
+    grid-area: nav;
 }
 
 .nav-list {
@@ -56,18 +71,19 @@ body {
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     transform: translateY(-2px);
 }
 
-/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
-.content {
+/* ==== ОСНОВНОЙ КОНТЕНТ ==== */
+main.content {
     padding: 40px;
     max-width: 900px;
     margin: 0 auto;
+    grid-area: main;
 }
 
-/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
+/* ==== ГЛАВНАЯ СТРАНИЦА ==== */
 .profile-header {
     text-align: center;
     margin-bottom: 40px;
@@ -113,13 +129,20 @@ body {
     line-height: 1.8;
 }
 
-/* ===== НАВЫКИ ===== */
-.skills-container {
+.about-me h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* ==== НАВЫКИ В ОДНУ СТРОКУ ==== */
+.skills-row {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 15px;
-    margin: 30px 0;
+    margin: 20px 0;
+    flex-wrap: wrap;
 }
 
 .skill-tag {
@@ -131,6 +154,8 @@ body {
     font-size: 14px;
     box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
     transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .skill-tag:hover {
@@ -138,7 +163,21 @@ body {
     box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
 
-/* ===== ОПЫТ РАБОТЫ ===== */
+/* Адаптивность для навыков */
+@media (max-width: 768px) {
+    .skills-row {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .skill-tag {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+}
+
+/* ==== ОПЫТ РАБОТЫ ==== */
 .experience-section {
     margin-top: 50px;
 }
@@ -151,12 +190,17 @@ body {
     font-weight: 300;
 }
 
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
 .experience-card {
     background: white;
     padding: 25px;
-    margin: 20px 0;
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     border-left: 4px solid #667eea;
     transition: transform 0.3s ease;
 }
@@ -178,64 +222,142 @@ body {
     margin: 0;
 }
 
-/* ===== НОВОСТИ ===== */
-.news-item {
-    background: white;
+/* ==== ФУТЕР ==== */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
     padding: 30px;
-    margin: 25px 0;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #e74c3c;
-    transition: all 0.3s ease;
+    margin-top: 50px;
+    grid-area: footer;
 }
 
-.news-item:hover {
+.footer p {
+    margin: 0;
+}
+
+/* ==== АДАПТИВНОСТЬ ==== */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main.content {
+        padding: 20px;
+    }
+    
+    .profile-photo {
+        width: 180px;
+        height: 220px;
+    }
+}
+
+/* ==== НОВОСТИ ==== */
+.news-container {
+    display: grid;
+    gap: 25px;
+}
+
+.news-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-left: 4px solid #667eea;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .news-title {
     font-size: 24px;
     color: #2c3e50;
-    margin: 0 0 15px 0;
+    margin: 0 0 10px 0;
     font-weight: 600;
-    border-bottom: 2px solid #f8f9fa;
-    padding-bottom: 10px;
 }
 
 .news-meta {
-    color: #7f8c8d;
+    color: #95a5a6;
     font-size: 14px;
-    margin-bottom: 20px;
-    font-weight: 500;
+    margin: 0 0 15px 0;
 }
 
 .news-text {
-    color: #555;
+    color: #34495e;
     line-height: 1.7;
-    font-size: 16px;
+    margin: 0;
 }
 
-/* ===== ТОВАРЫ ===== */
-.products-grid {
+/* ==== ПРАКТИКИ ==== */
+.practice-section {
+    margin-top: 30px;
+}
+
+.practice-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.practice-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-left: 4px solid #f39c12;
+    transition: transform 0.3s ease;
+}
+
+.practice-card:hover {
+    transform: translateX(5px);
+}
+
+.practice-title {
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.practice-content {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* ==== ТОВАРЫ В ОДНУ СТРОКУ ==== */
+.products-row {
+    display: flex;
+    justify-content: center;
     gap: 30px;
     margin: 40px 0;
+    flex-wrap: nowrap;
 }
 
 .product-card {
     background: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     border: 1px solid #f1f1f1;
+    width: 280px;
+    flex-shrink: 0;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
 }
 
 .product-image {
@@ -263,42 +385,55 @@ body {
     margin: 0;
 }
 
-/* ===== КОНТАКТЫ ===== */
+/* Адаптивность для товаров */
+@media (max-width: 768px) {
+    .products-row {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .product-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* ==== КОНТАКТЫ ==== */
 .contacts-section {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.contact-windows {
+.contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin: 40px 0;
 }
 
-.contact-window {
+.contact-card {
     background: white;
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
 
-.contact-window:first-child {
+.contact-card:first-child {
     border-top: 5px solid #9b59b6;
 }
 
-.contact-window:last-child {
+.contact-card:last-child {
     border-top: 5px solid #3498db;
 }
 
-.contact-window:hover {
+.contact-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
 
-.contact-window-title {
+.contact-title {
     font-size: 20px;
     color: #2c3e50;
     margin: 0 0 15px 0;
@@ -307,7 +442,7 @@ body {
     padding-bottom: 10px;
 }
 
-.contact-window-content {
+.contact-content {
     color: #555;
     line-height: 1.6;
 }
@@ -349,85 +484,103 @@ body {
     box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
 }
 
-/* ===== ПРАКТИЧЕСКИЕ РАБОТЫ ===== */
-.practice-windows {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin: 40px 0;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+/* ==== АДАПТИВНОСТЬ ДЛЯ ВСЕХ СТРАНИЦ ==== */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .news-container {
+        gap: 15px;
+    }
+    
+    .news-card {
+        padding: 20px;
+    }
 }
+/* Добавляем в конец styles.css */
 
-.practice-window {
-    background: white;
+/* ==== КОНТАКТЫ - НОВАЯ СТРУКТУРА ==== */
+.contact-info {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 25px;
+    margin: 20px 0;
     border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #f39c12;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.practice-window::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-}
-
-.practice-window:hover {
-    transform: translateX(5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-.practice-title {
-    font-size: 22px;
+    font-size: 18px;
     color: #2c3e50;
-    margin: 0 0 20px 0;
-    font-weight: 600;
-    border-bottom: 2px solid #f8f9fa;
-    padding-bottom: 15px;
 }
 
-.practice-content {
-    color: #555;
-    line-height: 1.6;
-}
-
-.practice-content strong {
+.contact-info h3 {
     color: #2c3e50;
-    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
-.practice-content ul {
-    margin: 15px 0 0 0;
-    padding-left: 20px;
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
 }
 
-.practice-content li {
-    margin-bottom: 8px;
-    position: relative;
-}
-
-.practice-content li::before {
-    content: '▸';
-    color: #f39c12;
-    font-weight: bold;
-    position: absolute;
-    left: -15px;
-}
-
-/* ===== ФУТЕР ===== */
-.footer {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: white;
+.contact-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     text-align: center;
-    padding: 30px;
-    margin-top: 50px;
+    border-left: 4px solid #667eea;
+}
+
+.contact-item h3 {
+    color: #2c3e50;
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact-item p {
+    color: #7f8c8d;
+    margin: 0;
+    font-size: 16px;
+}
+
+.contact-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Адаптивность для контактов */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        padding: 20px;
+        font-size: 16px;
+    }
 }

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Семестровая работа</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      .profile-photo {
+        width: 220px;
+        height: 280px;
+        object-fit: cover;
+        border: 4px solid #667eea;
+      }
+      .skill-badge {
+        transition: all 0.3s ease;
+      }
+      .skill-badge:hover {
+        transform: translateY(-2px);
+      }
+      .experience-card {
+        transition: all 0.3s ease;
+        border-left: 4px solid #667eea;
+      }
+      .experience-card:hover {
+        transform: translateY(-5px);
+      }
+      .theme-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <button class="btn btn-primary theme-btn rounded-circle" id="themeToggle">
+      <i class="bi bi-sun-fill"></i>
+    </button>
+
+    <div class="container-fluid p-0">
+      <header class="bg-primary text-white text-center py-4">
+        <div class="container">
+          <h1 class="display-4 fw-light mb-0">:3</h1>
+        </div>
+      </header>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/news.html">Новости</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/practices.html">Практики</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/goods.html">Товары</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/contacts.html">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main class="container my-5">
+        <article class="text-center mb-5">
+          <h1 class="display-5 mb-4">Информация об авторе</h1>
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <img
+                src="images/photo.jpg"
+                alt="Фото автора"
+                class="profile-photo rounded-3 shadow mb-4"
+              />
+              <h2 class="h3 mb-2">Семенов Тихон Павлович</h2>
+              <p class="text-muted fs-5">ЭФБО-02-24</p>
+            </div>
+          </div>
+        </article>
+
+        <section class="card border-0 shadow-sm mb-5">
+          <div class="card-body p-4">
+            <h2 class="card-title h4 mb-3">Обо мне</h2>
+            <p class="card-text fs-6 mb-0">
+              Студент МИРЭА, бывший профессиональный игрок в Dota 2.
+            </p>
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <h2 class="text-center mb-4">Мои навыки</h2>
+          <div class="row g-3 justify-content-center">
+            <div class="col-auto">
+              <span class="badge bg-primary skill-badge fs-6 p-3"
+                >Знание самой длинной скороговорки</span
+              >
+            </div>
+            <div class="col-auto">
+              <span class="badge bg-success skill-badge fs-6 p-3"
+                >Сборка кубика Рубика</span
+              >
+            </div>
+            <div class="col-auto">
+              <span class="badge bg-info skill-badge fs-6 p-3"
+                >Лунная походка</span
+              >
+            </div>
+            <div class="col-auto">
+              <span class="badge bg-warning skill-badge fs-6 p-3"
+                >Жонглирование</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <h2 class="text-center mb-4">Мой опыт работы</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card experience-card h-100 shadow-sm">
+                <div class="card-body">
+                  <h3 class="card-title h5">Профессиональная сцена</h3>
+                  <p class="card-text">
+                    В 2019 году принял участие в первом турнире по Dota 2.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card experience-card h-100 shadow-sm">
+                <div class="card-body">
+                  <h3 class="card-title h5">Игра с лучшим</h3>
+                  <p class="card-text">Играл с Серегой Пиратом.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card experience-card h-100 shadow-sm">
+                <div class="card-body">
+                  <h3 class="card-title h5">Показатель ММР</h3>
+                  <p class="card-text">Апнул титана в Dota 2.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+          <p class="mb-0">Все права защищены</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = themeToggle.querySelector("i");
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme =
+          document.documentElement.getAttribute("data-bs-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        document.documentElement.setAttribute("data-bs-theme", newTheme);
+        themeIcon.className =
+          newTheme === "light" ? "bi bi-sun-fill" : "bi bi-moon-fill";
+
+        themeToggle.classList.remove("btn-primary", "btn-dark");
+        themeToggle.classList.add(
+          newTheme === "light" ? "btn-primary" : "btn-dark"
+        );
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const experienceCards = document.querySelectorAll(".experience-card");
+        experienceCards.forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-5px)";
+          });
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0)";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

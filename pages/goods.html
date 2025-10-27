@@ -1,61 +1,83 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Товары - Семестровая работа</title>
-    <link rel="stylesheet" href="../style/styles.css">
-</head>
-<body>
-    <div class="page-container">
-        <header class="header">
-            <h1>Товары</h1>
-        </header>
-        
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-        
-        <main class="content">
-            <section class="goods-section">
-    <h2 class="section-title">Наши товары</h2>
-    <div class="products-row">
-        <article class="product-card">
-            <img src="../images/goods1.jpg" alt="Товар 1" class="product-image">
-            <div class="product-info">
-                <h3 class="product-name">Mask of Madness</h3>
-                <p class="product-price">1900 зол.</p>
-            </div>
-        </article>
-        
-        <article class="product-card">
-            <img src="../images/goods2.jpg" alt="Товар 2" class="product-image">
-            <div class="product-info">
-                <h3 class="product-name">Отстоять мид за вас</h3>
-                <p class="product-price">500 руб.</p>
-            </div>
-        </article>
-        
-        <article class="product-card">
-            <img src="../images/goods3.jpg" alt="Товар 3" class="product-image">
-            <div class="product-info">
-                <h3 class="product-name">Атомная электростанция(АЭС)</h3>
-                <p class="product-price">25 млрд. $</p>
-            </div>
-        </article>
+    <link rel="stylesheet" href="../style/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page__header">
+        <h1 class="page__header-title">Товары</h1>
+      </header>
+
+      <nav class="page__nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="../index.html">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="news.html">Новости</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="practices.html">Практики</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="goods.html">Товары</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="page__main">
+        <section class="goods">
+          <h2 class="goods__title">Наши товары</h2>
+          <div class="products__grid">
+            <article class="product__card">
+              <img
+                src="../images/goods1.jpg"
+                alt="Товар 1"
+                class="product__image"
+              />
+              <div class="product__info">
+                <h3 class="product__name">Mask of Madness</h3>
+                <p class="product__price">1900 зол.</p>
+              </div>
+            </article>
+
+            <article class="product__card">
+              <img
+                src="../images/goods2.jpg"
+                alt="Товар 2"
+                class="product__image"
+              />
+              <div class="product__info">
+                <h3 class="product__name">Отстоять мид за вас</h3>
+                <p class="product__price">500 руб.</p>
+              </div>
+            </article>
+
+            <article class="product__card">
+              <img
+                src="../images/goods3.jpg"
+                alt="Товар 3"
+                class="product__image"
+              />
+              <div class="product__info">
+                <h3 class="product__name">Атомная электростанция(АЭС)</h3>
+                <p class="product__price">25 млрд. $</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page__footer">
+        <p class="page__footer-text">Все права защищены</p>
+      </footer>
     </div>
-</section>
-        </main>
-        
-        <footer class="footer">
-            <p>Все права защищены</p>
-        </footer>
-    </div>
-</body>
+  </body>
 </html>

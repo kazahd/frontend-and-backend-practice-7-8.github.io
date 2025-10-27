@@ -1,58 +1,70 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Практики - Семестровая работа</title>
-    <link rel="stylesheet" href="../style/styles.css">
-</head>
-<body>
-    <div class="page-container">
-        <header class="header">
-            <h1>Практические работы</h1>
-        </header>
-        
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-        
-        <main class="content">
-            <section class="practices-section">
-                <h2 class="section-title">Практические работы</h2>
-                <div class="practices-grid">
-                    <article class="practice-card">
-                        <h3 class="practice-title">Практическая работа 1</h3>
-                        <div class="practice-content">
-                            <p>Введение в HTML и CSS</p>
-                        </div>
-                    </article>
-                    
-                    <article class="practice-card">
-                        <h3 class="practice-title">Практическая работа 2</h3>
-                        <div class="practice-content">
-                            <p>Верстка сайта</p>
-                        </div>
-                    </article>
-                    
-                    <article class="practice-card">
-                        <h3 class="practice-title">Практическая работа 3</h3>
-                        <div class="practice-content">
-                            <p>Основная структура сайта</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </main>
-        
-        <footer class="footer">
-            <p>Все права защищены</p>
-        </footer>
+    <link rel="stylesheet" href="../style/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page__header">
+        <h1 class="page__header-title">Практические работы</h1>
+      </header>
+
+      <nav class="page__nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="../index.html">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="news.html">Новости</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="practices.html"
+              >Практики</a
+            >
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="goods.html">Товары</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="page__main">
+        <section class="practices">
+          <h2 class="practices__title">Практические работы</h2>
+          <div class="practices__grid">
+            <article class="practice__card">
+              <h3 class="practice__card-title">Практическая работа 1</h3>
+              <div class="practice__card-content">
+                <p>Введение в HTML и CSS</p>
+              </div>
+            </article>
+
+            <article class="practice__card">
+              <h3 class="practice__card-title">Практическая работа 2</h3>
+              <div class="practice__card-content">
+                <p>Верстка сайта</p>
+              </div>
+            </article>
+
+            <article class="practice__card">
+              <h3 class="practice__card-title">Практическая работа 3</h3>
+              <div class="practice__card-content">
+                <p>Основная структура сайта</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page__footer">
+        <p class="page__footer-text">Все права защищены</p>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

@@ -1,64 +1,82 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Новости - Семестровая работа</title>
-    <link rel="stylesheet" href="../style/styles.css">
-</head>
-<body>
-    <div class="page-container">
-        <header class="header">
-            <h1>Новости</h1>
-        </header>
-        
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-        
-        <main class="content">
-            <section class="news-section">
-                <h2 class="section-title">Последние новости</h2>
-                
-                <div class="news-grid">
-                    <article class="news-card">
-                        <h3 class="news-title">Трамп споткнулся</h3>
-                        <div class="news-meta">Дата публикации: 9 июня 2025 | Автор: Семенов Тихон</div>
-                        <div class="news-text">
-                            Президент США Дональд Трамп споткнулся по время подъема по трапу самолета,
-                            момент попал на трансляцию телеканала C-SPAN.
-                        </div>
-                    </article>
-                    
-                    <article class="news-card">
-                        <h3 class="news-title">Константинополь - ВСЁ</h3>
-                        <div class="news-meta">Дата публикации: 29 мая 1453 | Автор: Семененко Тихонослав</div>
-                        <div class="news-text">
-                            29 мая 1453 года после двух месяцев сопротивления Константинополь пал. 
-                            Последний византийский император Константин XI погиб в битве. 
-                        </div>
-                    </article>
-                    
-                    <article class="news-card">
-                        <h3 class="news-title">Новый персонаж в Dota</h3>
-                        <div class="news-meta">Дата публикации: 30 апреля 2004 | Автор: Тихонов Семен</div>
-                        <div class="news-text">
-                            В кастомку Warcraft 3 под названием Dota с выходом версии 5.10 добавлен новый персонаж - Pudge.
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </main>
-        
-        <footer class="footer">
-            <p>Все права защищены</p>
-        </footer>
+    <link rel="stylesheet" href="../style/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page__header">
+        <h1 class="page__header-title">Новости</h1>
+      </header>
+
+      <nav class="page__nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="../index.html">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="news.html">Новости</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="practices.html">Практики</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="goods.html">Товары</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="page__main">
+        <section class="news">
+          <h2 class="news__title">Последние новости</h2>
+
+          <div class="news__grid">
+            <article class="news__card">
+              <h3 class="news__card-title">Трамп споткнулся</h3>
+              <div class="news__card-meta">
+                Дата публикации: 9 июня 2025 | Автор: Семенов Тихон
+              </div>
+              <div class="news__card-text">
+                Президент США Дональд Трамп споткнулся по время подъема по трапу
+                самолета, момент попал на трансляцию телеканала C-SPAN.
+              </div>
+            </article>
+
+            <article class="news__card">
+              <h3 class="news__card-title">Константинополь - ВСЁ</h3>
+              <div class="news__card-meta">
+                Дата публикации: 29 мая 1453 | Автор: Семененко Тихонослав
+              </div>
+              <div class="news__card-text">
+                29 мая 1453 года после двух месяцев сопротивления
+                Константинополь пал. Последний византийский император Константин
+                XI погиб в битве.
+              </div>
+            </article>
+
+            <article class="news__card">
+              <h3 class="news__card-title">Новый персонаж в Dota</h3>
+              <div class="news__card-meta">
+                Дата публикации: 30 апреля 2004 | Автор: Тихонов Семен
+              </div>
+              <div class="news__card-text">
+                В кастомку Warcraft 3 под названием Dota с выходом версии 5.10
+                добавлен новый персонаж - Pudge.
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page__footer">
+        <p class="page__footer-text">Все права защищены</p>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

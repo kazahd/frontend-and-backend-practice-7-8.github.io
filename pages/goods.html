@@ -36,40 +36,113 @@
       <main class="page__main">
         <section class="goods">
           <h2 class="goods__title">Наши товары</h2>
+
           <div class="products__grid">
-            <article class="product__card">
-              <img
-                src="../images/goods1.jpg"
-                alt="Товар 1"
-                class="product__image"
-              />
-              <div class="product__info">
-                <h3 class="product__name">Mask of Madness</h3>
-                <p class="product__price">1900 зол.</p>
+            <article class="product-card" data-category="equipment">
+              <div class="product-card__image-container">
+                <img
+                  src="../images/goods1.jpg"
+                  alt="Mask of Madness"
+                  class="product-card__image"
+                />
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__name">Mask of Madness</h3>
+                <p class="product-card__description">
+                  Повышает скорость атаки и передвижения ценой увеличения
+                  получаемого урона
+                </p>
+
+                <div class="product-card__prices">
+                  <p class="product-card__price-current">1900 зол.</p>
+                </div>
+
+                <div class="product-card__meta">
+                  <span
+                    class="product-card__stock product-card__stock--available"
+                    >В наличии</span
+                  >
+                </div>
+
+                <div class="product-card__actions">
+                  <button
+                    class="product-card__button product-card__button--primary add-to-cart-btn"
+                    data-added="false"
+                  >
+                    В корзину
+                  </button>
+                </div>
               </div>
             </article>
 
-            <article class="product__card">
-              <img
-                src="../images/goods2.jpg"
-                alt="Товар 2"
-                class="product__image"
-              />
-              <div class="product__info">
-                <h3 class="product__name">Отстоять мид за вас</h3>
-                <p class="product__price">500 руб.</p>
+            <article
+              class="product-card product-card--discount"
+              data-category="service"
+            >
+              <div class="product-card__discount-badge">-30%</div>
+              <div class="product-card__image-container">
+                <img
+                  src="../images/goods2.jpg"
+                  alt="Отстоять мид за вас"
+                  class="product-card__image"
+                />
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__name">Отстоять мид за вас</h3>
+                <p class="product-card__description">
+                  Профессиональный игрок отстоит вашу mid-линию в любой сложной
+                  ситуации
+                </p>
+
+                <div class="product-card__prices">
+                  <p class="product-card__price-current">350 руб.</p>
+                  <p class="product-card__price-old">500 руб.</p>
+                  <span class="product-card__price-percentage">-30%</span>
+                </div>
+
+                <div class="product-card__actions">
+                  <button
+                    class="product-card__button product-card__button--primary add-to-cart-btn"
+                    data-added="false"
+                  >
+                    В корзину
+                  </button>
+                </div>
               </div>
             </article>
 
-            <article class="product__card">
-              <img
-                src="../images/goods3.jpg"
-                alt="Товар 3"
-                class="product__image"
-              />
-              <div class="product__info">
-                <h3 class="product__name">Атомная электростанция(АЭС)</h3>
-                <p class="product__price">25 млрд. $</p>
+            <article
+              class="product-card product-card--selected product-card--new"
+              data-category="energy"
+            >
+              <div class="product-card__selected-indicator"></div>
+              <div class="product-card__selected-text">В корзине</div>
+
+              <div class="product-card__image-container">
+                <img
+                  src="../images/goods3.jpg"
+                  alt="Атомная электростанция"
+                  class="product-card__image"
+                />
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__name">Атомная электростанция (АЭС)</h3>
+                <p class="product-card__description">
+                  Современная АЭС с повышенной безопасностью и эффективностью
+                </p>
+
+                <div class="product-card__prices">
+                  <p class="product-card__price-current">25 млрд. $</p>
+                </div>
+
+                <div class="product-card__actions">
+                  <button
+                    class="product-card__button product-card__button--secondary add-to-cart-btn"
+                    data-added="true"
+                  >
+                    Убрать
+                  </button>
+                </div>
               </div>
             </article>
           </div>
@@ -80,5 +153,49 @@
         <p class="page__footer-text">Все права защищены</p>
       </footer>
     </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+
+        addToCartButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.stopPropagation();
+
+            const isAdded = this.getAttribute("data-added") === "true";
+            const productCard = this.closest(".product-card");
+
+            if (isAdded) {
+              this.setAttribute("data-added", "false");
+              this.textContent = "В корзину";
+              this.classList.remove("product-card__button--secondary");
+              this.classList.add("product-card__button--primary");
+
+              productCard.classList.remove("product-card--selected");
+            } else {
+              this.setAttribute("data-added", "true");
+              this.textContent = "Убрать";
+              this.classList.remove("product-card__button--primary");
+              this.classList.add("product-card__button--secondary");
+
+              productCard.classList.add("product-card--selected");
+            }
+          });
+        });
+
+        const productCards = document.querySelectorAll(".product-card");
+        productCards.forEach((card) => {
+          card.addEventListener("click", function () {
+            if (!this.classList.contains("product-card--disabled")) {
+              console.log(
+                "Переход на страницу товара:",
+                this.querySelector(".product-card__name").textContent
+              );
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
